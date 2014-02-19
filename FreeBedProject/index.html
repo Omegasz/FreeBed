@@ -1,21 +1,139 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+            <title>Clown</title>
+            <link rel="stylesheet" type="text/css" href="css/style.css"/>
+            <link rel="stylesheet" type="text/css" href="css/menu_login.css"/>
+            <script src="js/modernizr.custom.js"></script>
+            <script src="js/modernizr.custom.63321.js"></script>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+            
+            
+            <script type="text/javascript">
+                $(function(){
+                    $(".showpassword").each(function(index,input) {
+                        var $input = $(input);
+                        $("<p class='opt'/>").append(
+                            $("<input type='checkbox' class='showpasswordcheckbox' id='showPassword' />").click(function() {
+                                var change = $(this).is(":checked") ? "text" : "password";
+                                var rep = $("<input placeholder='Password' type='" + change + "' />")
+                                    .attr("id", $input.attr("id"))
+                                    .attr("name", $input.attr("name"))
+                                    .attr('class', $input.attr('class'))
+                                    .val($input.val())
+                                    .insertBefore($input);
+                                $input.remove();
+                                $input = rep;
+                             })
+                        ).append($("<label for='showPassword'/>").text("Show password")).insertAfter($input.parent());
+                    });
 
-	<head>
-		<meta charset="UTF-8"/>
-		<title> Mon Site </title>
-		<link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
-	</head>
+                    $('#showPassword').click(function(){
+                        if($("#showPassword").is(":checked")) {
+                            $('.icon-lock').addClass('icon-unlock');
+                            $('.icon-unlock').removeClass('icon-lock');    
+                        } else {
+                            $('.icon-unlock').addClass('icon-lock');
+                            $('.icon-lock').removeClass('icon-unlock');
+                        }
+                    });
+                });
+            </script>
+            <script>
+                //  The function to change the class
+                var changeClass = function (r,className1,className2) {
+                    var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+                    if( regex.test(r.className) ) {
+                        r.className = r.className.replace(regex,' '+className2+' ');
+                    }
+                    else{
+                        r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+                    }
+                    return r.className;
+                };  
 
-	<body>
-        <h1>Bonjour et bienvenue</h1>
-        <nav>
-            <ul>
-                <li>Accueil</li>
-                <li>News</li>
-                <li>Inscription</li>
-                <li>Connexion</li>
-            </ul>
-         </nav>
-	</body>
+                //  Creating our button in JS for smaller screens
+                var menuElements = document.getElementById('menu');
+                menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+                //  Toggle the class on click to show / hide the menu
+                document.getElementById('menutoggle').onclick = function() {
+                    changeClass(this, 'navtoogle active', 'navtoogle');
+                }
+
+                // http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+                document.onclick = function(e) {
+                    var mobileButton = document.getElementById('menutoggle'),
+                        buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+                    if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+                        changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+                    }
+                }
+            </script>
+
+        </head>
+    
+    <body>
+        <div id="logo">
+            <a href="index.html"><img src="pictures/logo.png" alt=""/></a>
+        </div>
+
+        <section class="main">
+            <form class="form-2">
+                <h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
+                <p class="float1">
+                    <label for="login"><i class="icon-user"></i>Username</label>
+                    <input type="text" name="login" placeholder="Username or email">
+                </p>
+                <p class="float2">
+                    <label for="password"><i class="icon-lock"></i>Password</label>
+                    <input type="password" name="password" placeholder="Password" class="showpassword">
+                </p>
+                <p class="clearfix"> 
+                    <input type="submit" name="submit" value="Log in" id="loginbtn">
+                </p>
+            </form>​​
+        </section>  
+
+        <div class="main clearfix">
+            <nav id="menu" class="nav">                 
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="icon">
+                                <i aria-hidden="true" class="icon-home"></i>
+                            </span>
+                            <span>Accueil</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"> 
+                                <i aria-hidden="true" class="icon-services"></i>
+                            </span>
+                            <span>Nouveautés</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon">
+                                <i aria-hidden="true" class="icon-portfolio"></i>
+                            </span>
+                            <span>Location</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon">
+                                <i aria-hidden="true" class="icon-blog"></i>
+                            </span>
+                            <span>Proposer un bien</span>
+                        </a>
+                    </li>
+                    </ul>
+                </nav>
+        </div>
+    </body>
 </html>

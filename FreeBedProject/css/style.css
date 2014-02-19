@@ -1,0 +1,17 @@
+body{
+	width:1200px;
+	margin: 0 auto;
+	background: url("http://subtlepatterns.com/patterns/escheresque.png");
+}
+
+#logo {
+
+	float: left;
+	width: 800px;
+	height:150px;
+	margin-top: 40px;
+}
+
+#logo img {
+	max-width: 78%;
+}
