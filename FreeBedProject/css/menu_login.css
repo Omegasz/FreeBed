@@ -38,11 +38,11 @@
 }
 
 .icon-location:before {
-	content: "\e601";
+	content: "\e602";
 }
 
 .icon-proposer:before {
-	content: "\e602";
+	content: "\e601";
 }
 
 a, li {
