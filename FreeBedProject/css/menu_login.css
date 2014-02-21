@@ -18,6 +18,13 @@
 	};
 }
 
+.recherche {
+	background: rgb(21, 40, 54);
+	height: 77px;
+	width: 300px;
+	border-radius: 0px 5px 0px 0px;
+}
+
 .icon-accueil, .icon-star, .icon-location, .icon-proposer {
 	font-family: 'icomoon';
 	speak: none;
@@ -53,16 +60,19 @@ a, li {
 /* Global CSS that are applied for all screen sizes */
 
 .nav {
-	margin-top: 40px;
+	margin: 40px auto 0 auto; 
+	clear: both;
+	height: 77px;
 }
 
 .nav ul {
-	max-width: 800px;
+	width: 1125px;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	font-size: 0.8em;
 	font-weight: 300;
+
 }
 
 .nav li span {
@@ -124,7 +134,6 @@ a, button {
 	background: rgb(22, 107, 162);
 }
 
-
 /* For screen bigger than 800px */
 @media (min-width: 50em) {
 
@@ -132,7 +141,7 @@ a, button {
 	.nav li {
 		font-style: calibri;
 		float: left;
-		width: 16.66666666666667%;
+		width: 20%;
 		text-align: center;
 		-webkit-transition: border .5s;
 		-moz-transition: border .5s;
@@ -476,9 +485,10 @@ a, button {
     margin-top: 40px;
     height: 150px;
     float: left;
+    margin-left: 40px;
 
     /* Styles */
-    background: #fffaf6;
+    background: url(http://subtlepatterns.com/patterns/squared_metal.png);
     border-radius: 4px;
     color: #7e7975;
     box-shadow:

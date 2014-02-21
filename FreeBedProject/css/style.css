@@ -1,7 +1,8 @@
-body{
+body {
 	width:1200px;
 	margin: 0 auto;
-	background: url("http://subtlepatterns.com/patterns/escheresque.png");
+	background: url(http://subtlepatterns.com/patterns/mochaGrunge.png);
+	height: 1000px;
 }
 
 #logo {
