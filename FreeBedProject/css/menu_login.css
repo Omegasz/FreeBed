@@ -18,7 +18,7 @@
 	};
 }
 
-.icon-team, .icon-blog, .icon-home, .icon-portfolio, .icon-services, .icon-contact, .icon-menu {
+.icon-accueil, .icon-star, .icon-location, .icon-proposer {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -29,33 +29,20 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-.icon-team:before {
-	content: "\e000";
+.icon-accueil:before {
+	content: "\e600";
 }
 
-.icon-blog:before {
-	content: "\e001";
+.icon-star:before {
+	content: "\e603";
 }
 
-.icon-home:before {
-	content: "\e002";
-	size: 75%;
+.icon-location:before {
+	content: "\e601";
 }
 
-.icon-portfolio:before {
-	content: "\e003";
-}
-
-.icon-services:before {
-	content: "\e004";
-}
-
-.icon-contact:before {
-	content: "\e005";
-}
-
-.icon-menu:before {
-	content: "\f0c9";
+.icon-proposer:before {
+	content: "\e602";
 }
 
 a, li {
@@ -66,7 +53,7 @@ a, li {
 /* Global CSS that are applied for all screen sizes */
 
 .nav {
-	margin-top: 20px;
+	margin-top: 40px;
 }
 
 .nav ul {
@@ -74,7 +61,7 @@ a, li {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	font-size: 1em;
+	font-size: 0.8em;
 	font-weight: 300;
 }
 
@@ -227,7 +214,7 @@ a, button {
 		margin: 0 auto;
 		padding: 0.8em;
 		border-radius: 50%;
-		font-size: 1.4em;
+		font-size: 1.2em;
 		box-shadow: 0 0 0 30px transparent;
 		background: rgba(255,255,255,0.1);
 		-webkit-transform: translate3d(0, 0, 0);
@@ -260,7 +247,7 @@ a, button {
 
 	/* Size and font adjustments to make it fit into the screen*/
 	.nav ul {
-		font-size: 1em;
+		font-size: 0.8em;
 	}
 
 }
@@ -478,16 +465,17 @@ a, button {
 /*LOGIN WINDOW*/
 
 #loginbtn {
-	margin-top: -75px;
+	margin-top: -58px;
 }
 
 .form-2 {
     /* Size and position */
     width: 370px;
-    margin-left: 68%;
     padding: 15px;
     position: relative;
-    margin-top: 30px;
+    margin-top: 40px;
+    height: 150px;
+    float: left;
 
     /* Styles */
     background: #fffaf6;
@@ -507,13 +495,14 @@ a, button {
     border-bottom: 1px solid #EBE6E2;
     text-shadow: 0 2px 0 rgba(255,255,255,0.8);
     box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    margin-top: -5px;
 }
 
 .form-2 h1 .log-in,
 .form-2 h1 .sign-up {
     display: inline-block;
     text-transform: uppercase;
-    height: 20px;
+    height: 15px;
 }
 
 .form-2 h1 .log-in {
@@ -530,16 +519,14 @@ a, button {
     width: 50%;
     float: left;
     padding-top: 2px;
-    border-top: 1px solid rgba(255,255,255,1);
     height: 30px;
-    margin-top: -8px;
+    margin-top: -5px;
 }
 
 .form-2 .float2 {
     width: 50%;
     float: left;
     padding-top: 2px;
-    border-top: 1px solid rgba(255,255,255,1);
     height: 30px;
     margin-top: 10px;
 }
@@ -675,7 +662,7 @@ a, button {
     font-size: 11px;
     font-weight: 400;
     text-transform: capitalize;
-    margin-top: 90px;
+    margin-top: 85px;
     margin-right: 30px;
 }
 

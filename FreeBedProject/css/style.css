@@ -5,13 +5,15 @@ body{
 }
 
 #logo {
-
 	float: left;
-	width: 800px;
-	height:150px;
-	margin-top: 40px;
+	width: 700px;
+	height: 150px;
+	margin-top: 50px;
+	margin-left: 2%;
+	margin-bottom: 60px;
 }
 
 #logo img {
 	max-width: 78%;
 }
+
