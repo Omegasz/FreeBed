@@ -28,7 +28,7 @@
 	background: rgb(21, 40, 54);
 	height: 77px;
 	width: 300px;
-	border-radius: 0px 5px 0px 0px;
+	border-radius: 0px 5px 5px 0px;
 }
 
 .icon-accueil, .icon-star, .icon-location, .icon-proposer {
@@ -124,7 +124,7 @@ a, button {
 /* Adding some background color to the different menu items */
 
 .nav li:nth-child(6n+1) {
-	border-radius: 5px 0px 0px 0px;
+	border-radius: 5px 0px 0px 5px;
 	background: rgb(208, 101, 3);
 }
 
@@ -529,6 +529,12 @@ a, button {
 .form-2 h1 .sign-up {
     color: #ffb347;
     padding-left: 2px;
+}
+
+.form-2 h1 .welcome {
+	display: inline-block;
+    height: 15px;
+    color: #6c6763;
 }
 
 .form-2 .float1 {
