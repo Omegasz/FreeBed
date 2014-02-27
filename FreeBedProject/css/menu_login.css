@@ -485,11 +485,11 @@ a, button {
 
 .form-2 {
     /* Size and position */
-    width: 370px;
+    width: auto;
     padding: 15px;
     position: relative;
     margin-top: 40px;
-    height: 150px;
+    height: auto;
     float: left;
     margin-left: 40px;
 
