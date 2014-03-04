@@ -9,8 +9,8 @@
             <link rel="icon" type="image/png" href="pictures/favicon.png" />
             <script src="js/modernizr.custom.js"></script>
             <script src="js/modernizr.custom.63321.js"></script>
-            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/				1.8.2/jquery.min.js"></script>
-            <script type="text/javascript">var _siteRoot='index.html',_root='index.html';</					script>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+            <script type="text/javascript">var _siteRoot='index.html',_root='index.html';</script>
             <script type="text/javascript" src="js/jquery.js"></script>
             <script type="text/javascript" src="js/scripts.js"></script>
             
@@ -47,7 +47,7 @@
             </script>
 
 
-        </head>
+    </head>
     
     <body>
         <header>
@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="location.php">
+                        <a href="#">
                             <span class="icon">
                                 <i aria-hidden="true" class="icon-location"></i>
                             </span>
@@ -96,53 +96,55 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <span class="recherche">
-                                Rechercher un bien
+                        <a href="recherche.php">
+                            <span class="icon">
+                                <i aria-hidden="true" class="icon-recherche"></i>
                             </span>
+                            <span>Rechercher un bien</span>
                         </a>
-                    </ul>
-                </nav>
+                    </li>
+                </ul>
+            </nav>
         </div>
+
         <br/>
         <br/>
         <br/>
         <br/>
 
-
-  <section class="main" style="margin-left:10%; margin-right:10%;">
-                       <form class="form-2 search" action="recherche.php" method="post">
-                            <h1><span class="log-in">Faites</span> votre <span class="sign-up">Recherche</span></h1>
+        <section class="main" style="margin-left:10%; margin-right:10%;">
+            <form class="fenetresearch" action="recherche.php" method="post">
+                <h1><span class="titlerecherche">Faites votre Recherche</span></h1>
                                 
-                                <b>Type de bien :</b>  <input type="checkbox" name="Maison" style="color:black;"> Maison
-                                                <input type="checkbox" name="appartement"> Appartement
-                                                <input type="checkbox" name="villa"> Villa 
-                                                <input type="checkbox" name="chalet"> Chalet
+                    <b>Type de bien :</b>  
+                        <input type="checkbox" name="Maison" style="color:black;"> Maison
+                        <input type="checkbox" name="appartement"> Appartement
+                        <input type="checkbox" name="villa"> Villa 
+                        <input type="checkbox" name="chalet"> Chalet
                                         
-                                <b style="margin-left:150px;">Prix entre :</b> 
-                                <input type="text-area" name="prix-min" placeholder="Prix min." style="width:70px;"> et 
-                                <input type="text-area" name="prix-max" placeholder="Prix max." style="width:70px;"><br/><br/>
+                        <b style="margin-left:150px;">Prix entre :</b> 
+                        <input type="text-area" name="prix-min" placeholder="Prix min." style="width:70px;"> et 
+                        <input type="text-area" name="prix-max" placeholder="Prix max." style="width:70px;"><br/><br/>
+ 
+                    <b>Nombre de pièce :</b>
+                        <input type="checkbox" name="1" style="color:black;"> 1
+                        <input type="checkbox" name="2"> 2
+                        <input type="checkbox" name="3"> 3
+                        <input type="checkbox" name="4"> 4 
+                        <input type="checkbox" name="5"> 5 
+                        <input type="checkbox" name="6"> 6 
+                        <input type="checkbox" name="7"> 7 
+                        <input type="checkbox" name="xxxxxxxxxxxxxxx"> plus
 
-                                <b>Nombre de pièce :</b>  <input type="checkbox" name="1" style="color:black;"> 1
-                                                <input type="checkbox" name="2"> 2
-                                                <input type="checkbox" name="3"> 3
-                                                <input type="checkbox" name="4"> 4 
-                                                <input type="checkbox" name="5"> 5 
-                                                <input type="checkbox" name="6"> 6 
-                                                <input type="checkbox" name="7"> 7 
-                                                <input type="checkbox" name="xxxxxxxxxxxxxxx"> plus
+                    <b style="margin-left:130px;">Surface entre :</b> 
+                        <input type="text-area" name="surface-min" placeholder="min. m²" style="width:70px;"> et 
+                        <input type="text-area" name="surface-max" placeholder="max. m²" style="width:70px;"><br/><br/>
 
-                                <b style="margin-left:130px;">Surface entre :</b> 
-                                <input type="text-area" name="surface-min" placeholder="min. m²" style="width:70px;"> et 
-                                <input type="text-area" name="surface-max" placeholder="max. m²" style="width:70px;"><br/><br/>
+                    <b>Lieu :</b> 
+                        <input type="text-area" name="surface-min" placeholder="Département" style="width:200px;">
 
-                                <b>Lieu :</b> 
-                                <input type="text-area" name="surface-min" placeholder="Département" style="width:200px;">
-
-                                <input type="submit" value=" FREEBED ! " style="margin-left:340px; margin-top:-30px;">
-
-                            
-                        </form>​​
-                    </section>
+                    <input type="submit" value=" FREEBED ! " style="margin-left:340px; margin-top:-30px;">                     
+            </form>​​
+        </section>
     </body>
 </html>

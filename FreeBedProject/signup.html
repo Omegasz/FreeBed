@@ -13,13 +13,6 @@
             <script type="text/javascript">var _siteRoot='index.html',_root='index.html';</script>
             <script type="text/javascript" src="js/jquery.js"></script>
             <script type="text/javascript" src="js/scripts.js"></script>
-        <script type="text/javascript">
-            if(!window.slider) var slider={};slider.data=
-                [{"id":"slide-img-1","client":"to sale","desc":"Interior House"},
-                {"id":"slide-img-2","client":"to rent","desc":"design bathroom"},
-                {"id":"slide-img-3","client":"visit it","desc":"architecture"},
-                {"id":"slide-img-4","client":"love it","desc":"future flat"}];
-        </script>
             
             
             <script type="text/javascript">
@@ -52,40 +45,7 @@
                     });
                 });
             </script>
-            <script>
-                //  The function to change the class
-                var changeClass = function (r,className1,className2) {
-                    var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
-                    if( regex.test(r.className) ) {
-                        r.className = r.className.replace(regex,' '+className2+' ');
-                    }
-                    else{
-                        r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
-                    }
-                    return r.className;
-                };  
-
-                //  Creating our button in JS for smaller screens
-                var menuElements = document.getElementById('menu');
-                menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
-
-                //  Toggle the class on click to show / hide the menu
-                document.getElementById('menutoggle').onclick = function() {
-                    changeClass(this, 'navtoogle active', 'navtoogle');
-                }
-
-                // http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
-                document.onclick = function(e) {
-                    var mobileButton = document.getElementById('menutoggle'),
-                        buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
-
-                    if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
-                        changeClass(mobileButton, 'navtoogle active', 'navtoogle');
-                    }
-                }
-            </script>
-
-        </head>
+    </head>
     
     <body>
         <header>
@@ -144,24 +104,46 @@
                 </ul>
             </nav>
         </div>
+
         <br/>
         <br/>
         <br/>
         <br/>
-        <div id="header"><div class="wrap">
-            <div id="slide-holder">
-                <div id="slide-runner">
-                    <a href=""><img id="slide-img-1" src="pictures/slider1.png" class="slide" alt="" /></a>
-                    <a href=""><img id="slide-img-2" src="pictures/slider2.png" class="slide" alt="" /></a>
-                    <a href=""><img id="slide-img-3" src="pictures/slider3.png" class="slide" alt="" /></a>
-                    <a href=""><img id="slide-img-4" src="pictures/slider4.png" class="slide" alt="" /></a>
-                    <div id="slide-controls">
-                        <p id="slide-client" class="text"><strong>post: </strong><span></span></p>
-                        <p id="slide-desc" class="text"></p>
-                        <p id="slide-nav"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        <section class="main" style="margin-left:10%; margin-right:10%;">
+            <form class="signupformulaire" action="signupform.php" method="post">
+                <h1><span class="titlerecherche">Inscription</span></h1>
+                    <table class="inputs">
+                        <tr>
+                            <td><b>Genre :</b></td>
+                            <td><input type="radio" name="gender" value="mr">M. <input type="radio" name="gender" value="mme">Mme. <input type="radio" name="gender" value="mlle">Mlle.
+                            <td><b>Mot de Passe:</b></td>
+                            <td><input type="password" name="pwd" style="width:125px;">
+                        <tr>
+                            <td><b>Nom :</b></td>
+                            <td><input type="text-area" name="nom" style="width:125px;"></td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Prénom :</b></td>
+                            <td><input type="text-area" name="prenom" style="width:125px;"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><b>Adresse :</b></td>
+                            <td><input type="text-area" name="adresse" style="width:125px;"></td>
+                        </tr>
+
+                        <tr>
+                            <td><b>Code Postal :</b></td>
+                            <td><input type="text-area" name="cp" style="width:125px;"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Ville :</b></td>
+                            <td><input type="text-area" name="ville" style="width:125px;"></td>
+                        </tr>
+                    </table>
+                    <input type="submit" value=" FREEBED ! " style="margin-left:340px; margin-top:-30px;">                     
+            </form>​​
     </body>
 </html>

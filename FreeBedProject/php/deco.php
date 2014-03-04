@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 	if(isset($_POST["deco"])){
 		$_SESSION =array();
