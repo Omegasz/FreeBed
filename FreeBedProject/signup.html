@@ -111,39 +111,51 @@
         <br/>
 
         <section class="main" style="margin-left:10%; margin-right:10%;">
-            <form class="signupformulaire" action="signupform.php" method="post">
+            <form class="signupformulaire" action="signup.php" method="post">
                 <h1><span class="titlerecherche">Inscription</span></h1>
                     <table class="inputs">
                         <tr>
-                            <td><b>Genre :</b></td>
-                            <td><input type="radio" name="gender" value="mr">M. <input type="radio" name="gender" value="mme">Mme. <input type="radio" name="gender" value="mlle">Mlle.
-                            <td><b>Mot de Passe:</b></td>
-                            <td><input type="password" name="pwd" style="width:125px;">
-                        <tr>
-                            <td><b>Nom :</b></td>
-                            <td><input type="text-area" name="nom" style="width:125px;"></td>
+                            <td style="width:125px;"><b>Genre :</b></td>
+                            <td><input type="radio" name="genre" value="Mr.">M. <input type="radio" name="genre" value="Mme.">Mme. <input type="radio" name="genre" value="Mlle.">Mlle.
+                            <td style="border-left:40px solid transparent;width:125px;"><b>Nom :</b></td>
+                            <td><input type="text-area" name="nom" style="width:125px;" required="required"></td>
                         </tr>
 
                         <tr>
-                            <td><b>Prénom :</b></td>
-                            <td><input type="text-area" name="prenom" style="width:125px;"></td>
+                            <td style="width:125px;"><b>Prénom :</b></td>
+                            <td><input type="text-area" name="prenom" style="width:125px;" required="required"></td>
+                            <td style="border-left:40px solid transparent;width:125px;"><b>Adresse :</b></td>
+                            <td><input type="text-area" name="adresse" style="width:125px;" required="required"></td>
+                        </tr>
+
+                        <tr>
+                            <td style="width:125px;"><b>Code Postal :</b></td>
+                            <td><input type="text-area" name="cp" style="width:125px;" required="required"></td>
+                            <td style="border-left:40px solid transparent;width:125px;"><b>Ville :</b></td>
+                            <td><input type="text-area" name="ville" style="width:125px;" required="required"></td>
                         </tr>
                         
                         <tr>
-                            <td><b>Adresse :</b></td>
-                            <td><input type="text-area" name="adresse" style="width:125px;"></td>
+                            <td style="width:125px;"><b>Mot de Passe :</b></td>
+                            <td><input type="password" name="pwd" style="width:125px;" required="required"></td>
+                            <td style="border-left:40px solid transparent;width:125px;"><b>Confirmation :</b></td>
+                            <td><input type="password" name="pwd2" style="width:125px;" required="required"></td>
                         </tr>
 
                         <tr>
-                            <td><b>Code Postal :</b></td>
-                            <td><input type="text-area" name="cp" style="width:125px;"></td>
+                            <td style="width:125px;"><b>Mail :</b></td>
+                            <td><input type="text-area" name="email" style="width:125px;" required="required"></td>
+                            <td style="border-left:40px solid transparent;width:125px;"><b>Téléphone :</b></td>
+                            <td><input type="text-area" name="telephone" style="width:125px;" required="required"></td>
                         </tr>
-                        <tr>
-                            <td><b>Ville :</b></td>
-                            <td><input type="text-area" name="ville" style="width:125px;"></td>
-                        </tr>
+
                     </table>
-                    <input type="submit" value=" FREEBED ! " style="margin-left:340px; margin-top:-30px;">                     
+                    <input type="submit" name="inscription" value="Inscription" style="margin-left:340px; margin-top:-40px;">                     
             </form>​​
     </body>
 </html>
+
+
+
+
+

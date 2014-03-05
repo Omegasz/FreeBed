@@ -63,7 +63,7 @@ a, li {
 /* Global CSS that are applied for all screen sizes */
 
 .nav {
-	margin: 40px auto 0 auto; 
+	margin: 0px auto 0 auto; 
 	clear: both;
 	height: 77px;
 }
@@ -598,7 +598,8 @@ a, button {
 }
 
 .form-2 input[type=text],
-.form-2 input[type=password] {
+.form-2 input[type=password],
+.form-2 input[type=text-area] {
     font-family: 'Lato', Calibri, Arial, sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -616,7 +617,8 @@ a, button {
 }
 
 .form-2 input[type=text]:hover,
-.form-2 input[type=password]:hover {
+.form-2 input[type=password]:hover,
+.form-2 input[type=text-area]:hover {
     border-color: #CCC;
 }
 
@@ -625,7 +627,8 @@ a, button {
 }
 
 .form-2 input[type=text]:focus,
-.form-2 input[type=password]:focus {
+.form-2 input[type=password]:focus,
+.form-2 input[type=text-area]:focus {
     border-color: #BBB;
     outline: none; /* Remove Chrome's outline */
 }
@@ -996,7 +999,8 @@ a, button {
 }
 
 .signupformulaire input[type=text],
-.signupformulaire input[type=password] {
+.signupformulaire input[type=password],
+.signupformulaire input[type=text-area] {
     font-family: 'Lato', Calibri, Arial, sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -1014,7 +1018,8 @@ a, button {
 }
 
 .signupformulaire input[type=text]:hover,
-.signupformulaire input[type=password]:hover {
+.signupformulaire input[type=password]:hover,
+.signupformulaire input[type=text-area]:hover {
     border-color: #CCC;
 }
 
@@ -1023,7 +1028,8 @@ a, button {
 }
 
 .signupformulaire input[type=text]:focus,
-.signupformulaire input[type=password]:focus {
+.signupformulaire input[type=password]:focus,
+.signupformulaire input[type=text-area]:focus {
     border-color: #BBB;
     outline: none; /* Remove Chrome's outline */
 }

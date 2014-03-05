@@ -1,27 +1,30 @@
 <?php
-	session_start();
-	include("php/connexion.php");
-	if(isset($_POST["email"])){
-		$email =$_POST ["email"];
-		$password = $_POST["password"];
-		$query = "SELECT * FROM User WHERE email = '".$email."' AND password = '".$password."' ; ";
-		$result = mysqli_query($connexion, $query);
-		if(mysqli_num_rows($result) != 0){
-			$user = mysqli_fetch_array($result);
-			$_SESSION["userId"] = $user['id'];
-		}else{
-			function myFunction()
-			{
-				alert("Mauvais mot de passe et/ou login.");
-			}
-		}
+include_once("php/connexion.php");
+
+	$query =" SELECT * FROM Type ";
+	$resultat = mysqli_query($connexion, $query);
+
+if( isset($_POST["inscription"])){
+	$genre = $_POST["genre"];
+	$nom = $_POST["nom"];
+	$prenom = $_POST["prenom"];
+	$adresse = $_POST["adresse"];
+	$cp = $_POST["cp"];
+	$ville = $_POST["ville"];
+	$pwd = $_POST["pwd"];
+	$pwd2 = $_POST["pwd2"];
+	$email = $_POST["email"];
+	$telephone = $_POST["telephone"];
+	$type = 2;
+
+	if($pwd == $pwd2 && $type != "0"){
+		//Enregistrement en BDD
+		$query ="INSERT INTO User VALUES ('','".$genre."','".$nom."','".$prenom."','".$adresse."','".$cp."','".$ville."','".$pwd."','".$email."','".$telephone."',".$type.")";
+		$res = mysqli_query($connexion, $query);
 	}
 
-	if(isset($_SESSION["userId"])){
-		$query = "SELECT * FROM User WHERE id=".$_SESSION["userId"]."";
-		$result = mysqli_query($connexion, $query);
-		$user = mysqli_fetch_array($result);
-	}
+	header('location: index.php');
 
+}
 	include('signup.html');
 ?>
