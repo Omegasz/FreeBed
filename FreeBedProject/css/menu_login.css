@@ -1114,3 +1114,79 @@ a, button {
 	margin-left: 10px;
 	text-align: center;
 }
+
+/* Redirection Page */
+
+.redirection {
+    /* Size and position */
+    width: 600px;
+    padding: 15px;
+    position: relative;
+    margin-top: 40px;
+    height: auto;
+    float: left;
+    margin-left: 160px;
+
+    /* Styles */
+    background: url(http://subtlepatterns.com/patterns/squared_metal.png);
+    border-radius: 4px;
+    color: #7e7975;
+    box-shadow:
+        0 2px 2px rgba(0,0,0,0.2),        
+        0 1px 5px rgba(0,0,0,0.2),        
+        0 0 0 10px rgba(255,255,255,0.4); 
+}
+
+.redirection h1 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #bdb5aa;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #EBE6E2;
+    text-shadow: 0 2px 0 rgba(255,255,255,0.8);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    margin-top: -5px;
+}
+
+.redirection h1 .titlerecherche {
+    display: inline-block;
+    height: 15px;
+}
+
+.redirection h1 .titlerecherche {
+    color: #6c6763;
+    padding-right: 2px;
+}
+
+.redirection .float1 {
+    width: 50%;
+    float: left;
+    padding-top: 2px;
+    height: 30px;
+    margin-top: -5px;
+}
+
+.redirection .float2 {
+    width: 50%;
+    float: left;
+    padding-top: 2px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.redirection .float1:first-of-type {
+    padding-right: 5px;
+}
+
+.redirection .float1:last-of-type {
+    padding-left: 5px;
+}
+
+.redirection .float2:first-of-type {
+    padding-right: 5px;
+}
+
+.redirection .float2:last-of-type {
+    padding-left: 5px;
+}
+

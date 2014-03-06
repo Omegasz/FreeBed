@@ -23,7 +23,7 @@ if( isset($_POST["inscription"])){
 		$res = mysqli_query($connexion, $query);
 	}
 
-	header('location: index.php');
+	header('location: redirection.php');
 
 }
 	include('signup.html');
