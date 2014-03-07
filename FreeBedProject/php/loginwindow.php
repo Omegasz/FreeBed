@@ -4,6 +4,31 @@
                         <form class="form-2" method="post" action="php/deco.php">
                             <h1><span class="welcome"> Bonjour, '.$user["genre"].' '.$user["nom"].' '.$user["prenom"].'</span></h1>
                             <br/>
+                            <div class="comptel">
+                                <ul>
+                                    <li>
+                                        <a href="infos.php">Mes Infos Perso</a>
+                                    </li>
+                                    <li>
+                                        <a href="biens.php">Mes Réservations</a>
+                                    </li>';
+
+                                    if(isset($_SESSION["typeId"])){
+                                        if($_SESSION["typeId"] == 2){
+                                            echo '<li>
+                                                <a href="inscriptionbailleur.php">Proposer un bien</a>
+                                            </li>';
+                                        }
+
+                                        else {
+                                            echo '<li>
+                                                <a href="mesbien.php">Mes biens</a>
+                                            </li>';                                        
+                                        }
+                                    }
+
+                                echo '</ul>
+                            </div>
                             <input type="submit" name="deco" value="Se Déconnecter" id="decobtn"/>
                         </form>​​
                     </section>';
@@ -27,4 +52,4 @@
                         </form>​​
                     </section>';
             }
-?>
+?>;

@@ -1,8 +1,8 @@
-a:link, a:visited {
+.wrap a:link, a:visited {
 color : #fff;
 text-decoration : none;
 }
-a img {
+.wrap a img {
 border : 0;
 }
 div.wrap {

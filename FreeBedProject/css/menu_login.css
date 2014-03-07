@@ -495,6 +495,24 @@ a, button {
 	margin-top: 50px;
 }
 
+.comptel ul {
+	font-family: 'tyscriptextrabolddemo';
+	float:left;
+	margin-top: -5px;
+	margin-left: -10px;
+	width: 150px;
+}
+
+.comptel a:visited, .comptel a:link {
+	color: #7e7975;
+	text-decoration : none;
+}
+
+.comptel a:hover {
+	color: #A7A4A0;
+	text-decoration : none;	
+}
+
 .form-2 {
     /* Size and position */
     width: 370px;
