@@ -87,14 +87,34 @@
                             <span>Location</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <span class="icon">
-                                <i aria-hidden="true" class="icon-proposer"></i>
-                            </span>
-                            <span>Proposer un bien</span>
-                        </a>
-                    </li>
+
+                    <?php
+                    if(isset($_SESSION["typeId"])){
+                        if($_SESSION["typeId"] == 2){
+                            echo '<li>
+                                <a href="inscriptionbailleur.php">
+                                    <span class="icon">
+                                        <i aria-hidden="true" class="icon-proposer"></i>
+                                    </span>
+                                    <span>Proposer un bien</span>
+                                </a>
+                            </li>';
+                        }
+
+                        else {
+                            echo '<li>
+                                <a href="mesbien.php">
+                                    <span class="icon">
+                                        <i aria-hidden="true" class="icon-proposer"></i>
+                                    </span>
+                                    <span>Proposer un bien</span>
+                                </a>
+                            </li>';                                        
+                        }
+                    }
+
+                    ?>
+                    
                     <li>
                         <a href="recherche.php">
                             <span class="icon">
@@ -115,7 +135,7 @@
         <section class="main" style="margin-left:10%; margin-right:10%;">
             <form class="redirection" action="recherche.php" method="post">
                 <h1><span class="titlerecherche">Inscription Réussie</span></h1>
-                Votre Inscription à bien était pris en compte, veuillez patienter vous aller être redirigé vers l'accueil.
+                <b>Votre Inscription à bien était pris en compte, veuillez patienter vous aller être redirigé vers l'accueil.</b>
             </form>​​
         </section>
     </body>
