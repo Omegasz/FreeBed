@@ -1208,3 +1208,128 @@ a, button {
     padding-left: 5px;
 }
 
+/* Inscription Bailleur Page */
+
+.inscriptionb {
+    /* Size and position */
+    width: 850px;
+    padding: 15px;
+    position: relative;
+    margin-top: 40px;
+    height: auto;
+    float: left;
+    margin-left: 45px;
+
+    /* Styles */
+    background: url(http://subtlepatterns.com/patterns/squared_metal.png);
+    border-radius: 4px;
+    color: #7e7975;
+    box-shadow:
+        0 2px 2px rgba(0,0,0,0.2),        
+        0 1px 5px rgba(0,0,0,0.2),        
+        0 0 0 10px rgba(255,255,255,0.4); 
+}
+
+.inscriptionb h1 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #bdb5aa;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #EBE6E2;
+    text-shadow: 0 2px 0 rgba(255,255,255,0.8);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    margin-top: -5px;
+}
+
+.inscriptionb h1 .titlerecherche {
+    display: inline-block;
+    height: 15px;
+}
+
+.inscriptionb h1 .titlerecherche {
+    color: #6c6763;
+    padding-right: 2px;
+}
+
+.inscriptionb .float1 {
+    width: 50%;
+    float: left;
+    padding-top: 2px;
+    height: 30px;
+    margin-top: -5px;
+}
+
+.inscriptionb .float2 {
+    width: 50%;
+    float: left;
+    padding-top: 2px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.inscriptionb .float1:first-of-type {
+    padding-right: 5px;
+}
+
+.inscriptionb .float1:last-of-type {
+    padding-left: 5px;
+}
+
+.inscriptionb .float2:first-of-type {
+    padding-right: 5px;
+}
+
+.inscriptionb .float2:last-of-type {
+    padding-left: 5px;
+}
+
+.inscriptionb input[type=submit] {
+    /* Size and position */
+    width: 20%;
+    height: 38px;
+    float: center;
+    position: relative;
+
+    /* Styles */
+    box-shadow: inset 0 1px rgba(255,255,255,0.3);
+    border-radius: 3px;
+    cursor: pointer;
+
+    /* Font styles */
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 38px; /* Same as height */
+    text-align: center;
+    font-weight: bold;
+}
+
+.inscriptionb input[type=submit] {
+	margin-top: 5px;
+    margin-left: 40%;
+    background: #fbd568; /* Fallback */
+    background: -moz-linear-gradient(#fbd568, #ffb347);
+    background: -ms-linear-gradient(#fbd568, #ffb347);
+    background: -o-linear-gradient(#fbd568, #ffb347);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fbd568), to(#ffb347));
+    background: -webkit-linear-gradient(#fbd568, #ffb347);
+    background: linear-gradient(#fbd568, #ffb347);
+    border: 1px solid #f4ab4c;
+    color: #996319;
+    text-shadow: 0 1px rgba(255,255,255,0.3);
+}
+
+.inscriptionb input[type=submit]:hover {
+    box-shadow: 
+        inset 0 1px rgba(255,255,255,0.3), 
+        inset 0 20px 40px rgba(255,255,255,0.15);
+}
+
+.inscriptionb input[type=submit]:active {
+    top: 1px;
+}
+
+/* Fallback fro broswers that don't support box shadows */
+.no-boxshadow .inscriptionb input[type=submit]:hover {
+    background: #ffb347;
+}
+
