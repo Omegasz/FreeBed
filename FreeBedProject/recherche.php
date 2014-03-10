@@ -26,5 +26,5 @@ if(isset($_SESSION["userId"])){
 	$user = mysqli_fetch_array($result);
 }
 
-include('index.html');
+include('recherche.html');
 ?>

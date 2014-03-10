@@ -19,17 +19,12 @@ if(isset($_POST["email"])){
 	}
 }
 
+
 if(isset($_SESSION["userId"])){
 	$query = "SELECT * FROM user WHERE id=".$_SESSION["userId"]."";
 	$result = mysqli_query($connexion, $query);
 	$user = mysqli_fetch_array($result);
 }
 
-if(isset($_SESSION["userId"])){
-	include('inscriptionbailleur.html');
-}
-
-else{
-	header('location: nonco.php');
-}
+include('nonco.html');
 ?>

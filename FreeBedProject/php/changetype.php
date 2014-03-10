@@ -10,7 +10,7 @@ if(isset($_SESSION["userId"])){
 		$query = "UPDATE user SET user.id_type = user.id_type - 1 WHERE user.id = ".$_SESSION['userId'];
 		$res = mysqli_query($connexion, $query);
 
-		header('location: ../index.php');
+		header('location: ../redirectiondeco.php');
 	}
 
 	else  {
