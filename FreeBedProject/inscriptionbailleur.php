@@ -19,7 +19,6 @@ if(isset($_POST["email"])){
 	}
 }
 
-
 if(isset($_SESSION["userId"])){
 	$query = "SELECT * FROM user WHERE id=".$_SESSION["userId"]."";
 	$result = mysqli_query($connexion, $query);

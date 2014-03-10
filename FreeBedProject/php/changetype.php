@@ -1,16 +1,24 @@
 <?php
-include_once("connexion.php");
+session_start();
+include("connexion.php");
 
-	if( isset($_GET['id'])){
-		$query = "UPDATE freebed.user SET id_type = 1 WHERE user.id = ".$_GET['id'];
-		$resultat = mysqli_query($connexion, $query);
+	$query =" SELECT * FROM user ";
+	$resultat = mysqli_query($connexion, $query);
 
-		if($resultat){
-			include("tonpere.php");
-		}else{
-			echo "Tout va mal";
-		}	
+if(isset($_SESSION["userId"])){
+	if(isset($_POST["changer"])){
+		$query = "UPDATE user SET user.id_type = user.id_type - 1 WHERE user.id = ".$_SESSION['userId'];
+		$res = mysqli_query($connexion, $query);
 
+		header('location: ../index.php');
 	}
 
+	else  {
+		echo "FUUUUUUUU";
+	}
+}
+
+else{
+	echo "Fuck.";
+}
 ?>
