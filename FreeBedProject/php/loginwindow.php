@@ -1,4 +1,5 @@
 <?php
+
             if(isset($_SESSION["userId"])){
                 echo '<section class="main">
                         <form class="form-2" method="post" action="php/deco.php">
@@ -52,4 +53,5 @@
                         </form>​​
                     </section>';
             }
-?>;
+
+?>

@@ -1,10 +1,12 @@
 <?php
+
+
 session_start();
 include("php/connexion.php");
 if(isset($_POST["email"])){
 	$email =$_POST["email"];
 	$password = $_POST["password"];
-	$query = "SELECT *, u.id as id_u FROM user u JOIN type t ON t.id = u.id_type WHERE email = '".$email."' AND pwd = '".$password."' ; ";
+	$query = "SELECT *, u.id as id_u FROM user u JOIN type t ON t.id = u.id_type WHERE email = '".$email."' AND password = '".$password."' ; ";
 	$result = mysqli_query($connexion, $query);
 
 	if(mysqli_num_rows($result) != 0){
@@ -26,5 +28,7 @@ if(isset($_SESSION["userId"])){
 	$user = mysqli_fetch_array($result);
 }
 
-include('index.html');
+	header ("Refresh: 3;url=infos.php");
+
+	include('modifok.html')
 ?>
