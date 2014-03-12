@@ -737,6 +737,7 @@ a, button {
     height: auto;
     float: left;
     margin-left: 40px;
+    margin-bottom: 40px;
 
     /* Styles */
     background: url(http://subtlepatterns.com/patterns/squared_metal.png);
@@ -762,11 +763,35 @@ a, button {
 .fenetresearch h1 .titlerecherche {
     display: inline-block;
     height: 15px;
-}
-
-.fenetresearch h1 .titlerecherche {
     color: #6c6763;
     padding-right: 2px;
+}
+
+.titletable {
+    font-weight: bold;
+    color: #bdb5aa;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #EBE6E2;
+    text-shadow: 0 2px 0 rgba(255,255,255,0.8);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    margin-top: -5px;
+}
+
+.titletable td h2 .titlerecherche  {
+	font-size: 20px;
+    display: inline-block;
+    height: 15px;
+    color: #6c6763;
+    padding-right: 2px;
+}
+
+.titletable td {
+	color: #6c6763;
+}
+
+.titletable td img {
+	border-radius: 5px;
+	overflow: hidden;
 }
 
 .fenetresearch .float1 {

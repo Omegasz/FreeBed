@@ -25,10 +25,16 @@ $bien = NULL;
 
 while($row = mysqli_fetch_array($result)) { 
 	$bien  .= 
-	'<table style="width:800px;height: 40px;border: 1px solid black;">
+	'<table style="width:800px;height: 40px;" class="titletable">
 		<tr> 
-			<td style="width: 650px;"> Location ' . $row['type_b'] . ' ' . $row['surface'] . ' m² ' . $row['ville'] . '</td>
-			<td style="width: 150px;border-left:40px solid transparent;"> Prix nuit : ' . $row['prix_n'] . ' € </td>
+			<td colspan="2"><h2><span class="titlerecherche"> Location ' . $row['type_b'] . ' ' . $row['surface'] . ' m² ' . $row['ville'] . '</span></h2></td>
+			<td style="vertical-align: bottom;"> Prix Nuit : ' . $row['prix_n'] . ' € </td>
+		</tr>
+
+		<tr>
+			<td style="width: 150px;"><img src="' . $row['photo'] . '"/></td>
+			<td style="width: 475px;"></td>
+			<td style="width: 175px;vertical-align: top;"> Prix Semaine : ' . $row['prix_s'] . ' € </td>
 		</tr>
 	</table>';
 }
