@@ -3,8 +3,8 @@ session_start();
 include("php/connexion.php");
 if(isset($_POST["email"])){
 	$email =$_POST["email"];
-	$password = $_POST["password"];
-	$query = "SELECT *, u.id as id_u FROM user u JOIN type t ON t.id = u.id_type WHERE email = '".$email."' AND pwd = '".$password."' ; ";
+	$pwd = $_POST["pwd"];
+	$query = "SELECT *, u.id as id_u FROM user u JOIN type t ON t.id = u.id_type WHERE email = '".$email."' AND pwd = '".$pwd."' ; ";
 	$result = mysqli_query($connexion, $query);
 
 	if(mysqli_num_rows($result) != 0){
@@ -19,6 +19,27 @@ if(isset($_POST["email"])){
 	}
 }
 
+$query = "SELECT * FROM bien WHERE id_user=".$_SESSION["userId"]." ORDER BY datedajout";
+$result = mysqli_query($connexion, $query);
+$bien = NULL;
+
+while($row = mysqli_fetch_array($result)) { 
+	$bien  .= 
+	'<table style="width:800px;height: 40px;" class="titletable">
+		<tr> 
+			<td colspan="2"><h2><span class="titlerecherche"> Location ' . $row['type_b'] . ' ' . $row['surface'] . ' m² ' . $row['ville'] . '</span></h2></td>
+			<td style="vertical-align: bottom;"> Prix Nuit : ' . $row['prix_n'] . ' € </td>
+		</tr>
+
+		<tr>
+			<td style="width: 150px;"><img src="' . $row['photo'] . '"/></td>
+			<td style="width: 475px;"></td>
+			<td style="width: 175px;vertical-align: top;"> Prix Semaine : ' . $row['prix_s'] . ' € </td>
+		</tr>
+	</table>';
+}
+
+
 
 if(isset($_SESSION["userId"])){
 	$query = "SELECT * FROM user WHERE id=".$_SESSION["userId"]."";
@@ -26,24 +47,6 @@ if(isset($_SESSION["userId"])){
 	$user = mysqli_fetch_array($result);
 }
 
-
 include('mesbien.html');
-
-// lancement de la requete
-
-$sql = 'SELECT * FROM bien WHERE id_user = ".$_SESSION['userId']. '; //texte de la requete SQL
-$resultat=mysql_query($sql) or die("Pb avec la requette: ".mysql_error());
-//Execute la requete SQL sur la connection actuel et la base de donnee semectionne par mysql_select_db et envoie les réponses dans $resultat
-
-//la les résultats sont stockés en mémoire il faut aller les lire ligne par ligne avec une boucle while et mysql_fetch...
-
-while($donnees=mysql_fetch_array($resultat){
-	//et les afficher chaque ligne est contenue dans un array $donnees, chaque index de l'array est accessible par le nom du champ de ta table
-	echo "premier champ de ta table ":$donnees['type']."<br />";
-	echo "deuxieme champ de ta table ":$donnees['ville']."<br />";
-	//etc....
-
-}
-mysql_close($conn);
 
 ?>

@@ -47,7 +47,7 @@
             </script>
     </head>
     
-    <body>
+    <body style="height: auto">
         <header>
             <div id="logo">
                 <a href="index.php"><img src="pictures/logo.png" alt=""/></a>
@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="news.php">
                             <span class="icon"> 
                                 <i aria-hidden="true" class="icon-star"></i>
                             </span>
@@ -142,15 +142,11 @@
         <br/>
 
         <section class="main" style="margin-left:10%; margin-right:10%;">
-            <form class="signupformulaire" action="proposer.php" method="post">
-                <h1><span class="titlerecherche">Mes biens</span></h1>
-                    <table class="inputs">
-                        
-
-<?php echo $data['type']; ?> / / / / / <?php echo $data['ville']; ?>
-
-
-                    </table>                
+            <form class="fenetresearch" action="proposer.php" method="post">
+                <h1><span class="titlerecherche">Mes Biens</span></h1>
+                    <?php
+                        echo ' '. $bien . ' ';
+                    ?>           
             </form>​​
     </body>
 </html>
