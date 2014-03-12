@@ -19,6 +19,21 @@ if(isset($_POST["email"])){
 	}
 }
 
+$query = "SELECT * FROM bien WHERE dispo = 1 ORDER BY datedajout";
+$result = mysqli_query($connexion, $query);
+$bien = NULL;
+
+while($row = mysqli_fetch_array($result)) { 
+	$bien  .= 
+	'<table style="width:800px;height: 40px;border: 1px solid black;">
+		<tr> 
+			<td style="width: 650px;"> Location ' . $row['type_b'] . ' ' . $row['surface'] . ' m² ' . $row['ville'] . '</td>
+			<td style="width: 150px;border-left:40px solid transparent;"> Prix nuit : ' . $row['prix_n'] . ' € </td>
+		</tr>
+	</table>';
+}
+
+
 
 if(isset($_SESSION["userId"])){
 	$query = "SELECT * FROM user WHERE id=".$_SESSION["userId"]."";
@@ -26,5 +41,6 @@ if(isset($_SESSION["userId"])){
 	$user = mysqli_fetch_array($result);
 }
 
-include('index.html');
+include('news.html');
+
 ?>

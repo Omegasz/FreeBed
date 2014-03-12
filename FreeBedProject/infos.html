@@ -21,7 +21,6 @@
                 {"id":"slide-img-4","client":"love it","desc":"future flat"}];
         </script>
             
-            
             <script type="text/javascript">
                 $(function(){
                     $(".showpassword").each(function(index,input) {
@@ -110,7 +109,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="news.php">
                             <span class="icon"> 
                                 <i aria-hidden="true" class="icon-star"></i>
                             </span>
@@ -216,8 +215,8 @@
                             <td style="width:125px;"><input type="text-area" name="telephone" required="required" value="0<?php if(isset($user)) echo $user['telephone']; ?>"/></td>
                         </tr>
                 </table>
-                <input type="submit" name="modifier" value="Modifier">
-                <input type="submit" name="delete" value="Supprimer">
+                <input type="submit" name="modifier" value="Modifier"/>
+                <?php echo "<a href='php/delete.php?id=".$user['id']."'>" ?><input type="button" name="delete" value="Supprimer le Compte"/></a>
             </form>
     </body>
 </html>

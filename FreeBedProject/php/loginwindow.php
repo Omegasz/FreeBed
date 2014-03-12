@@ -44,8 +44,8 @@
                                 <input type="text" name="email" placeholder="E-Mail" required="required">
                             </p>
                             <p class="float2">
-                                <label for="password"><i class="icon-lock"></i>Password</label>
-                                <input type="password" name="password" placeholder="Password" class="showpassword" required="required">
+                                <label for="pwd"><i class="icon-lock"></i>Password</label>
+                                <input type="password" name="pwd" placeholder="Password" class="showpassword" required="required">
                             </p>
                             <p class="clearfix"> 
                                 <input type="submit" name="submit" value="Log in" id="loginbtn">
