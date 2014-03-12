@@ -4,7 +4,7 @@ include("php/connexion.php");
 if(isset($_POST["email"])){
 	$email =$_POST["email"];
 	$password = $_POST["password"];
-	$query = "SELECT *, u.id as id_u FROM user u JOIN type t ON t.id = u.id_type WHERE email = '".$email."' AND password = '".$password."' ; ";
+	$query = "SELECT *, u.id as id_u FROM user u JOIN type t ON t.id = u.id_type WHERE email = '".$email."' AND password = '".$pwd."' ; ";
 	$result = mysqli_query($connexion, $query);
 
 	if(mysqli_num_rows($result) != 0){
