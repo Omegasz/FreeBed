@@ -794,6 +794,57 @@ a, button {
 	overflow: hidden;
 }
 
+.titletable td input[type=button] {
+    /* Size and position */
+    width: 40%;
+    height: 38px;
+    float: right;
+    position: relative;
+    margin-right: 25px;
+
+    /* Styles */
+    box-shadow: inset 0 1px rgba(255,255,255,0.3);
+    border-radius: 3px;
+    cursor: pointer;
+
+    /* Font styles */
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 38px; /* Same as height */
+    text-align: center;
+    font-weight: bold;
+}
+
+.titletable td input[type=button] {
+	margin-top: 5px;
+    margin-left: 1%;
+    background: #fbd568; /* Fallback */
+    background: -moz-linear-gradient(#fbd568, #ffb347);
+    background: -ms-linear-gradient(#fbd568, #ffb347);
+    background: -o-linear-gradient(#fbd568, #ffb347);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fbd568), to(#ffb347));
+    background: -webkit-linear-gradient(#fbd568, #ffb347);
+    background: linear-gradient(#fbd568, #ffb347);
+    border: 1px solid #f4ab4c;
+    color: #996319;
+    text-shadow: 0 1px rgba(255,255,255,0.3);
+}
+
+.titletable td input[type=button]:hover {
+    box-shadow: 
+        inset 0 1px rgba(255,255,255,0.3), 
+        inset 0 20px 40px rgba(255,255,255,0.15);
+}
+
+.titletable td input[type=button]:active {
+    top: 1px;
+}
+
+/* Fallback fro broswers that don't support box shadows */
+.no-boxshadow .titletable td input[type=button]:hover {
+    background: #ffb347;
+}
+
 .fenetresearch .float1 {
     width: 50%;
     float: left;
