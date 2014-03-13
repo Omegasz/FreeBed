@@ -185,39 +185,40 @@
                     <table class="inputs">
                         <tr>
                             <td style="width:125px;"><b>Type :</b></td>
-                            <td><input type="radio" name="type_b" value="villa">Villa <input type="radio" name="type_b" value="maison">Maison <input type="radio" name="type_b" value="appartement">Appartement <input type="radio" name="type_b" value="chalet">Chalet
+                            <td><input type="radio" name="type_b" value="Villa">Villa <input type="radio" name="type_b" value="Maison">Maison <input type="radio" name="type_b" value="Appartement">Appartement <input type="radio" name="type_b" value="Chalet">Chalet
                             <td style="border-left:40px solid transparent;width:125px;"><b>Adresse du bien :</b></td>
-                            <td><input type="text-area" name="adresse" style="width:125px;" required="required" value="<?php if(isset($user)) echo $bien['adresse']; ?>"></td>
+                            <td><input type="text-area" name="adresse" style="width:125px;" required="required" value="<?php if(isset($bien)) echo $bien['adresse']; ?>"></td>
                         </tr>
 
                         <tr>
                             <td style="width:125px;"><b>Code postal :</b></td>
-                            <td><input type="text-area" name="cp" style="width:125px;" required="required"></td>
+                            <td><input type="text-area" name="cp" style="width:125px;" required="required" value="<?php if(isset($bien)) echo $bien['cp']; ?>"></td>
                             <td style="border-left:40px solid transparent;width:125px;"><b>Ville :</b></td>
-                            <td><input type="text-area" name="ville" style="width:125px;" required="required"></td>
+                            <td><input type="text-area" name="ville" style="width:125px;" required="required" value="<?php if(isset($bien)) echo $bien['ville']; ?>"></td>
                         </tr>
 
                         <tr>
                             <td style="width:125px;"><b>Département :</b></td>
-                            <td><input type="text-area" name="departement" style="width:125px;" required="required"></td>
+                            <td><input type="text-area" name="departement" style="width:125px;" required="required" value="<?php if(isset($bien)) echo $bien['departement']; ?>"></td>
                             <td style="border-left:40px solid transparent;width:125px;"><b>Surface en m² :</b></td>
-                            <td><input type="text-area" name="surface" style="width:125px;" required="required"></td>
+                            <td><input type="text-area" name="surface" style="width:125px;" required="required" value="<?php if(isset($bien)) echo $bien['surface']; ?>"></td>
                         </tr>
                         
                         <tr>
                             <td style="width:125px;"><b>Prix/semaine :</b></td>
-                            <td><input type="text-area" name="prix_s" style="width:125px;" required="required"></td>
+                            <td><input type="text-area" name="prix_s" style="width:125px;" required="required" value="<?php if(isset($bien)) echo $bien['prix_s']; ?>"></td>
                             <td style="border-left:40px solid transparent;width:125px;"><b>Prix/nuit :</b></td>
-                            <td><input type="text-area" name="prix_n" style="width:125px;" required="required"></td>
+                            <td><input type="text-area" name="prix_n" style="width:125px;" required="required" value="<?php if(isset($bien)) echo $bien['prix_n']; ?>"></td>
                         </tr>
 
                         <tr>
                             <td style="width:125px;"><b>Nombre de pièce :</b></td>
-                            <td><input type="text-area" name="nb_piece" style="width:125px;" required="required"></td>
+                            <td><input type="text-area" name="nb_piece" style="width:125px;" required="required" value="<?php if(isset($bien)) echo $bien['nb_piece']; ?>"></td>
                         </tr>
 
                     </table>
-                    <input type="submit" name="modifier" value="Modifier votre bien" style="margin-left:240px; margin-top:-40px;">                     
+                    <input type="submit" name="modifier" value="Modifier votre bien" style="margin-left:240px; margin-top:-40px;">
+                    <input type="hidden" name="id_b" value= "<?php echo $id_b;?>"/>                    
             </form>​​
     </body>
 </html>

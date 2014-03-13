@@ -34,8 +34,8 @@ while($row = mysqli_fetch_array($result)) {
 		<tr>
 			<td style="width: 150px;"><img src="' . $row['photo'] . '"/></td>
 			<td style="width: 475px;">
-			<a href="modifbien.php?id='.$row["id_b"].'"><input type="button" name="modifier" value="Modifier le Bien"/></a>
-            <a href="deletebien.php?id='.$row["id_b"].'"><input type="button" name="delete" value="Supprimer le Bien"/></a>
+			<a href="modifbien.php?id_b='.$row["id_b"].'"><input type="button" name="modifier" value="Modifier le Bien"/></a>
+            <a href="deletebien.php?id_b='.$row["id_b"].'"><input type="button" name="delete" value="Supprimer le Bien"/></a>
             </td>
 			<td style="width: 175px;vertical-align: top;"> Prix Semaine : ' . $row['prix_s'] . ' € </td>
 		</tr>
@@ -50,6 +50,11 @@ if(isset($_SESSION["userId"])){
 	$user = mysqli_fetch_array($result);
 }
 
-include('mesbien.html');
+if(isset($_SESSION["userId"])){
+	include('mesbien.html');
+}
+else {
+	header("location: nonco.php");
+}
 
 ?>
