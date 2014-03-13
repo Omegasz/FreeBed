@@ -19,7 +19,7 @@ if(isset($_POST["email"])){
 	}
 }
 
-$query = "SELECT * FROM bien WHERE dispo = 1 ORDER BY datedajout";
+$query = "SELECT * FROM bien WHERE dispo = 1 ORDER BY datedajout DESC";
 $result = mysqli_query($connexion, $query);
 $bien = NULL;
 
@@ -32,8 +32,8 @@ while($row = mysqli_fetch_array($result)) {
 		</tr>
 
 		<tr>
-			<td style="width: 150px;"><img src="' . $row['photo'] . '"/></td>
-			<td style="width: 475px;"></td>
+			<td style="width: 150px;"><div class="photo"><img src="' . $row['photo'] . '"/></div></td>
+			<td style="width: 475px;border-right: 20px solid transparent;border-left: 20px solid transparent;">'. $row['comment'] . '</td>
 			<td style="width: 175px;vertical-align: top;"> Prix Semaine : ' . $row['prix_s'] . ' € </td>
 		</tr>
 	</table>';

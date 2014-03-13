@@ -840,6 +840,14 @@ a, button {
     top: 1px;
 }
 
+.photo {
+	width:150px;
+	height:150px;
+	background: url("../pictures/no_image.png");
+	border-radius:5px;
+	overflow: hidden;
+}
+
 /* Fallback fro broswers that don't support box shadows */
 .no-boxshadow .titletable td input[type=button]:hover {
     background: #ffb347;

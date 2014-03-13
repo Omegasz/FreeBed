@@ -17,3 +17,7 @@ body {
 	max-width: 78%;
 }
 
+textarea {
+	resize: none;
+}
+
