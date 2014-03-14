@@ -27,7 +27,7 @@ while($row = mysqli_fetch_array($result)) {
 	$bien  .= 
 	'<table style="width:800px;height: 40px;" class="titletable">
 		<tr> 
-			<td colspan="2"><h2><span class="titlerecherche"> Location ' . $row['type_b'] . ' ' . $row['surface'] . ' m² ' . $row['ville'] . '</span></h2></td>
+			<td colspan="2"><a href="bien.php?id_b='.$row["id_b"].'"><h2><span class="titlerecherche"> Location ' . $row['type_b'] . ' ' . $row['surface'] . ' m² ' . $row['ville'] . '</span></h2></a></td>
 			<td style="vertical-align: bottom;"> Prix Nuit : ' . $row['prix_n'] . ' € </td>
 		</tr>
 

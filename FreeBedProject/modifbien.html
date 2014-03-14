@@ -222,6 +222,15 @@
                         </tr>
 
                     </table>
+
+                    <?php
+                    if($bien["dispo"] == "1"){
+                        echo '<input type="submit" name="hide" value="Cacher le bien" style="margin-left:240px; margin-top:-90px;">';
+                    }else{
+                        echo '<input type="submit" name="display" value="Afficher le Bien" style="margin-left:240px; margin-top:-90px;">';
+                    }
+                    ?>
+
                     <input type="submit" name="modifier" value="Modifier votre bien" style="margin-left:240px; margin-top:-40px;">
                     <input type="hidden" name="id_b" value= "<?php echo $id_b;?>"/>                    
             </form>​​

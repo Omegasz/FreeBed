@@ -27,12 +27,12 @@ while($row = mysqli_fetch_array($result)) {
 	$bien  .= 
 	'<table style="width:800px;height: 40px;" class="titletable">
 		<tr> 
-			<td colspan="2"><h2><span class="titlerecherche"> Location ' . $row['type_b'] . ' ' . $row['surface'] . ' m² ' . $row['ville'] . '</span></h2></td>
+			<td colspan="2"><a href="bien.php?id_b='.$row["id_b"].'"><h2><span class="titlerecherche"> Location ' . $row['type_b'] . ' ' . $row['surface'] . ' m² ' . $row['ville'] . '</span></h2></a></td>
 			<td style="vertical-align: bottom;"> Prix Nuit : ' . $row['prix_n'] . ' € </td>
 		</tr>
 
 		<tr>
-			<td style="width: 150px;"><div class="photo"><img src="' . $row['photo'] . '"/></div></td>
+			<td style="width: 150px;"><div class="photo"><img src="' . $row['photo'] . '" alt=""/></div></td>
 			<td style="width: 475px;">
 				<a href="modifbien.php?id_b='.$row["id_b"].'"><input type="button" name="modifier" value="Modifier le Bien"/></a>
 	            <a href="php/deletebien.php?id_b='.$row["id_b"].'"><input type="button" name="delete" value="Supprimer le Bien"/></a></br>

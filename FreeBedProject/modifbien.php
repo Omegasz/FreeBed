@@ -39,6 +39,22 @@ if( isset($_POST["modifier"])){
 
 }
 
+if(isset($_POST["hide"])){
+		$id_b = $_POST['id_b'];
+		$query = "UPDATE bien SET bien.dispo = bien.dispo - 1 WHERE bien.id_b = ".$id_b."";
+		$res = mysqli_query($connexion, $query);
+
+	header('location: mesbien.php');
+}
+
+if(isset($_POST["display"])){
+		$id_b = $_POST['id_b'];
+		$query = "UPDATE bien SET bien.dispo = bien.dispo + 1 WHERE bien.id_b = ".$id_b."";
+		$res = mysqli_query($connexion, $query);
+
+	header('location: mesbien.php');
+}
+
 if(isset($_SESSION["userId"])){
 	include('modifbien.html');
 }
