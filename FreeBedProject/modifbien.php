@@ -27,10 +27,11 @@ if( isset($_POST["modifier"])){
 	$type_b = $_POST["type_b"];
 	$prix_s = $_POST["prix_s"];
 	$prix_n = $_POST["prix_n"];
+	$comment = $_POST["comment"];
 	$id_b = $_POST["id_b"];
 
 	if($type_b != "0"){
-		$bdd = "UPDATE `bien` SET `adresse` = '".$adresse."', `cp` = '".$cp."', `ville` = '".$ville."', `departement` = '".$departement."', `surface` = '".$surface."',`nb_piece` = '".$nb_piece."', `type_b` = '".$type_b."', `prix_s` = '".$prix_s."', `prix_n` = '".$prix_n."'  WHERE `bien`.`id_b` = ".$id_b."";
+		$bdd = "UPDATE `bien` SET `adresse` = '".$adresse."', `cp` = '".$cp."', `ville` = '".$ville."', `departement` = '".$departement."', `surface` = '".$surface."',`nb_piece` = '".$nb_piece."', `type_b` = '".$type_b."', `prix_s` = '".$prix_s."', `prix_n` = '".$prix_n."', `comment` = '".$comment."'   WHERE `bien`.`id_b` = ".$id_b."";
 		mysqli_query($connexion, $bdd) or die(mysql_error());
 
 		header("location: modifbienok.php");

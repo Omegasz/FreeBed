@@ -216,6 +216,11 @@
                             <td><input type="text-area" name="nb_piece" style="width:125px;" required="required" value="<?php if(isset($bien)) echo $bien['nb_piece']; ?>"></td>
                         </tr>
 
+                        <tr>
+                            <td style="width:125px;"><b>Commentaires :</b></td>
+                            <td colspan="3"><textarea placeholder="(255 Carac. Max.)" cols="50" rows="5" name="comment" required="required"><?php if(isset($bien)){ echo $bien['comment'];} ?></textarea></td>
+                        </tr>
+
                     </table>
                     <input type="submit" name="modifier" value="Modifier votre bien" style="margin-left:240px; margin-top:-40px;">
                     <input type="hidden" name="id_b" value= "<?php echo $id_b;?>"/>                    
