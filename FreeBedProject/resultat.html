@@ -45,11 +45,9 @@
                     });
                 });
             </script>
-
-
     </head>
     
-    <body>
+    <body style="height: auto">
         <header>
             <div id="logo">
                 <a href="index.php"><img src="pictures/logo.png" alt=""/></a>
@@ -144,38 +142,16 @@
         <br/>
 
         <section class="main" style="margin-left:10%; margin-right:10%;">
-            <form class="fenetresearch" action="recherche.php" method="post">
-                <h1><span class="titlerecherche">Faites votre Recherche</span></h1>
-                                
-                    <b>Type de bien :</b>  
-                        <input type="radio" name="type" value="Maison" style="color:black;"> Maison
-                        <input type="radio" name="type" value="appartement"> Appartement
-                        <input type="radio" name="type" value="villa"> Villa 
-                        <input type="radio" name="type" value="chalet"> Chalet
-                                        
-                        <b style="margin-left:150px;">Prix entre :</b> 
-                        <input type="text-area" name="prix_min" placeholder="Prix min." style="width:70px;"> et 
-                        <input type="text-area" name="prix_max" placeholder="Prix max." style="width:70px;"><br/><br/>
- 
-                    <b>Nombre de pièce :</b>
-                        <input type="radio" name="nb_piece" value="1"> 1
-                        <input type="radio" name="nb_piece" value="2"> 2
-                        <input type="radio" name="nb_piece" value="3"> 3
-                        <input type="radio" name="nb_piece" value="4"> 4 
-                        <input type="radio" name="nb_piece" value="5"> 5 
-                        <input type="radio" name="nb_piece" value="6"> 6 
-                        <input type="radio" name="nb_piece" value="7"> 7
-
-                    <b style="margin-left:130px;">Surface entre :</b> 
-                        <input type="text-area" name="surface_min" placeholder="Min. m²" style="width:70px;"> et 
-                        <input type="text-area" name="surface_max" placeholder="Max. m²" style="width:70px;"><br/><br/>
-
-                    <b>Lieu :</b> 
-                        <input type="text-area" name="departement" placeholder="Département" style="width:200px;">
-
-                    <input type="submit" name="rechercher" value=" FREEBED ! " style="margin-left:340px; margin-top:-30px;">                     
+            <form class="fenetresearch">
+                <h1><span class="titlerecherche">Ma recherche</span></h1>
+                    <?php
+                        echo ' '. $bien . ' ';
+                    ?>           
             </form>​​
-        </section>
-
     </body>
 </html>
+
+
+
+
+
