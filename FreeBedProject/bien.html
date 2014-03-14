@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+            <title>FreeBed</title>
+            <link rel="stylesheet" type="text/css" href="css/style.css"/>
+            <link rel="stylesheet" type="text/css" href="css/menu_login.css"/>
+            <link rel="stylesheet" href="css/styleslide.css" type="text/css" media="screen" />
+            <link rel="icon" type="image/png" href="pictures/favicon.png" />
+            <script src="js/modernizr.custom.js"></script>
+            <script src="js/modernizr.custom.63321.js"></script>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+            <script type="text/javascript">var _siteRoot='index.html',_root='index.html';</script>
+            <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="js/scripts.js"></script>
+        <script type="text/javascript">
+            if(!window.slider) var slider={};slider.data=
+                [{"id":"slide-img-1","client":"to sale","desc":"Interior House"},
+                {"id":"slide-img-2","client":"to rent","desc":"design bathroom"},
+                {"id":"slide-img-3","client":"visit it","desc":"architecture"},
+                {"id":"slide-img-4","client":"love it","desc":"future flat"}];
+        </script>
+            
+            <script type="text/javascript">
+                $(function(){
+                    $(".showpassword").each(function(index,input) {
+                        var $input = $(input);
+                        $("<p class='opt'/>").append(
+                            $("<input type='checkbox' class='showpasswordcheckbox' id='showPassword' />").click(function() {
+                                var change = $(this).is(":checked") ? "text" : "password";
+                                var rep = $("<input placeholder='Password' type='" + change + "' />")
+                                    .attr("id", $input.attr("id"))
+                                    .attr("name", $input.attr("name"))
+                                    .attr('class', $input.attr('class'))
+                                    .val($input.val())
+                                    .insertBefore($input);
+                                $input.remove();
+                                $input = rep;
+                             })
+                        ).append($("<label for='showPassword'/>").text("Show password")).insertAfter($input.parent());
+                    });
+
+                    $('#showPassword').click(function(){
+                        if($("#showPassword").is(":checked")) {
+                            $('.icon-lock').addClass('icon-unlock');
+                            $('.icon-unlock').removeClass('icon-lock');    
+                        } else {
+                            $('.icon-unlock').addClass('icon-lock');
+                            $('.icon-lock').removeClass('icon-unlock');
+                        }
+                    });
+                });
+            </script>
+            <script>
+                //  The function to change the class
+                var changeClass = function (r,className1,className2) {
+                    var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+                    if( regex.test(r.className) ) {
+                        r.className = r.className.replace(regex,' '+className2+' ');
+                    }
+                    else{
+                        r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+                    }
+                    return r.className;
+                };  
+
+                //  Creating our button in JS for smaller screens
+                var menuElements = document.getElementById('menu');
+                menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+                //  Toggle the class on click to show / hide the menu
+                document.getElementById('menutoggle').onclick = function() {
+                    changeClass(this, 'navtoogle active', 'navtoogle');
+                }
+
+                // http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+                document.onclick = function(e) {
+                    var mobileButton = document.getElementById('menutoggle'),
+                        buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+                    if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+                        changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+                    }
+                }
+            </script>
+
+        </head>
+    
+    <body>
+        <header>
+            <div id="logo">
+                <a href="index.php"><img src="pictures/logo.png" alt=""/></a>
+            </div>
+
+            <?php
+            include('php/loginwindow.php');
+            ?>
+        </header>
+           
+        <div class="main clearfix">
+            <nav id="menu" class="nav">                 
+                <ul>
+                    <li>
+                        <a href="index.php">
+                            <span class="icon">
+                                <i aria-hidden="true" class="icon-accueil"></i>
+                            </span>
+                            <span>Accueil</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="news.php">
+                            <span class="icon"> 
+                                <i aria-hidden="true" class="icon-star"></i>
+                            </span>
+                            <span>Nouveautés</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon">
+                                <i aria-hidden="true" class="icon-location"></i>
+                            </span>
+                            <span>Location</span>
+                        </a>
+                    </li>
+
+                    <?php
+                    if(isset($_SESSION["typeId"])){
+                        if($_SESSION["typeId"] == 2){
+                            echo '<li>
+                                <a href="inscriptionbailleur.php">
+                                    <span class="icon">
+                                        <i aria-hidden="true" class="icon-proposer"></i>
+                                    </span>
+                                    <span>Proposer un bien</span>
+                                </a>
+                            </li>';
+                        }
+
+                        else {
+                            echo '<li>
+                                <a href="proposer.php">
+                                    <span class="icon">
+                                        <i aria-hidden="true" class="icon-proposer"></i>
+                                    </span>
+                                    <span>Proposer un bien</span>
+                                </a>
+                            </li>';                                        
+                        }
+                    }
+
+                    else {
+                        echo '<li>
+                            <a href="inscriptionbailleur.php">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-proposer"></i>
+                                </span>
+                                <span>Proposer un bien</span>
+                            </a>
+                        </li>';
+                    }
+
+                    ?>
+
+                    <li>
+                        <a href="recherche.php">
+                            <span class="icon">
+                                <i aria-hidden="true" class="icon-recherche"></i>
+                            </span>
+                            <span>Rechercher un bien</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <section class="main" style="margin-left:10%; margin-right:10%;">
+                <form class="signupformulaire" action="modifbien.php" method="post">
+                    <h1><span class="titlerecherche" style="font-size:20px;"><?php  echo 'Location ' . $bien['type_b'] . ' ' . $bien['surface'] . ' m² ' . $bien['villeb'] . ''; ?></span></h1>
+                        <input type="hidden" name="id_b" value= "<?php echo $id_b;?>"/>
+                    <table style="width:800px;height: 40px;" class="titletable">
+                        <tr> 
+                            <td colspan="2" style="border-bottom: 20px solid transparent;"><div class="photo" style="margin: 0 auto 0 auto;"><?php echo'<img src="' . $bien['photo'] . '"/>'?></div></td>
+                        </tr>
+
+                        <tr>
+                            <td style="width: 450px;border-right: 100px solid transparent;border-left: 20px solid transparent;text-align: center;font-size: 20px;"><?php echo ''. $bien["comment"] .''?></td>
+                            <td style="width: 350px;font-size: 18px;">Propiétaire : <?php echo ''.$bien["genre"].' '.$bien["nom"].'' ?></br>Téléphone : <?php echo '0'.$bien["telephone"].'' ?></br>Département : <?php echo ''.$bien["departement"].'' ?> </br>Adresse : <?php echo ''.$bien["adresseb"].'' ?></br>Code Postale : <?php echo ''.$bien["cpb"].'' ?></br>Ville : <?php echo ''.$bien["villeb"].'' ?></br> </td>
+                        </tr>
+                    </table>
+                </form>
+        </section>
+    </body>
+</html>

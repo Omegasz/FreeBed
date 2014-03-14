@@ -27,7 +27,7 @@ while($row = mysqli_fetch_array($result)) {
 	$bien  .= 
 	'<table style="width:800px;height: 40px;" class="titletable">
 		<tr> 
-			<td colspan="2"><a href="bien.php?id_b='.$row["id_b"].'"><h2><span class="titlerecherche"> Location ' . $row['type_b'] . ' ' . $row['surface'] . ' m² ' . $row['ville'] . '</span></h2></a></td>
+			<td colspan="2"><h2><span class="titlerecherche"> Location ' . $row['type_b'] . ' ' . $row['surface'] . ' m² ' . $row['ville'] . '</span></h2></td>
 			<td style="vertical-align: bottom;"> Prix Nuit : ' . $row['prix_n'] . ' € </td>
 		</tr>
 
@@ -40,20 +40,6 @@ while($row = mysqli_fetch_array($result)) {
 			<td style="width: 175px;vertical-align: top;"> Prix Semaine : ' . $row['prix_s'] . ' € </td>
 		</tr>
 	</table>';
-}
-
-if(isset($_POST["hide"])){
-	$query = "UPDATE bien SET dispo = dispo - 1 WHERE id_b = $id_b";
-	$res = mysqli_query($connexion, $query);
-
-	header('location: ../mesbien.php');
-}
-
-if(isset($_POST["display"])){
-	$query = "UPDATE bien SET dispo = dispo + 1 WHERE id_b = $id_b";
-	$res = mysqli_query($connexion, $query);
-
-	header('location: ../mesbien.php');
 }
 
 if(isset($_SESSION["userId"])){
@@ -70,10 +56,4 @@ else {
 }
 
 ?>
-
-
-<!--					if($row["dispo"] == "1"){
-					    echo "<input type="submit" name="hide" value="Cacher le bien" style="margin-right: 135px; margin-top: 20px;">";
-					}else{
-					    echo "<input type="submit" name="display" value="Afficher le Bien" style="margin-right: 135px; margin-top: 20px;">";
 
