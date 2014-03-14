@@ -40,12 +40,12 @@
                         <form class="form-2" action="index.php" method="post">
                             <h1><span class="log-in">Log in</span> or <a href="signup.php"><span class="sign-up">sign up</span></a></h1>
                             <p class="float1">
-                                <label for="login"><i class="icon-user"></i>E-Mail</label>
-                                <input type="text" name="email" placeholder="E-Mail" required="required">
+                                <label for="mail"><i class="icon-user"></i>E-Mail</label>
+                                <input type="text" id="mail" name="email" placeholder="E-Mail" required="required">
                             </p>
                             <p class="float2">
                                 <label for="pwd"><i class="icon-lock"></i>Password</label>
-                                <input type="password" name="pwd" placeholder="Password" class="showpassword" required="required">
+                                <input type="password" id="pwd" name="pwd" placeholder="Password" class="showpassword" required="required">
                             </p>
                             <p class="clearfix"> 
                                 <input type="submit" name="submit" value="Log in" id="loginbtn">

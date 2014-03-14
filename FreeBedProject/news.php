@@ -32,7 +32,7 @@ while($row = mysqli_fetch_array($result)) {
 		</tr>
 
 		<tr>
-			<td style="width: 150px;"><div class="photo"><img src="' . $row['photo'] . '"/></div></td>
+			<td style="width: 150px;"><div class="photo"><img src="' . $row['photo'] . '" alt=""/></div></td>
 			<td style="width: 475px;border-right: 20px solid transparent;border-left: 20px solid transparent;">'. $row['comment'] . '</td>
 			<td style="width: 175px;vertical-align: top;"> Prix Semaine : ' . $row['prix_s'] . ' € </td>
 		</tr>

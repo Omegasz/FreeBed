@@ -187,19 +187,19 @@
                             <td style="width:170px;">Genre</td>
                             <td style="width:170px;"><input type="radio" name="genre" value="M.">M. <input type="radio" name="genre" value="Mme.">Mme. <input type="radio" name="genre" value="Mlle.">Mlle.</td>
                             <td style="width:170px;border-left:40px solid transparent;">Nom</td>
-                            <td style="width:170px;"><input type="text-area" name="nom" required="required" value="<?php if(isset($user)) echo $user['nom']; ?>"/></td>
+                            <td style="width:170px;"><input type="text" name="nom" required="required" value="<?php if(isset($user)) echo $user['nom']; ?>"/></td>
                         </tr>
                         <tr>
                             <td style="width:125px;">Prénom</td>
-                            <td style="width:150px;"><input type="text-area" name="prenom" required="required" value="<?php if(isset($user)) echo $user['prenom']; ?>"/></td>
+                            <td style="width:150px;"><input type="text" name="prenom" required="required" value="<?php if(isset($user)) echo $user['prenom']; ?>"/></td>
                             <td style="width:125px;border-left:40px solid transparent;">Adresse</td>
-                            <td style="width:125px;"><input type="text-area" name="adresse" required="required" value="<?php if(isset($user)) echo $user['adresse']; ?>"/></td>
+                            <td style="width:125px;"><input type="text" name="adresse" required="required" value="<?php if(isset($user)) echo $user['adresse']; ?>"/></td>
                         </tr>
                         <tr>
                             <td style="width:125px;">Code Postale</td>
-                            <td style="width:125px;"><input type="text-area" name="cp" required="required" value="<?php if(isset($user)) echo $user['cp']; ?>"/></td>
+                            <td style="width:125px;"><input type="text" name="cp" required="required" value="<?php if(isset($user)) echo $user['cp']; ?>"/></td>
                             <td style="width:125px;border-left:40px solid transparent;">Ville</td>
-                            <td style="width:125px;"><input type="text-area" name="ville" required="required" value="<?php if(isset($user)) echo $user['ville']; ?>"/></td>
+                            <td style="width:125px;"><input type="text" name="ville" required="required" value="<?php if(isset($user)) echo $user['ville']; ?>"/></td>
                         </tr>
                         <tr>
                             <td style="width:125px;">Mot de passe</td>
@@ -210,13 +210,14 @@
                         </tr> 
                         <tr>
                             <td style="width:125px;">Email</td>
-                            <td style="width:125px;"><input type="text-area" name="email" required="required" value="<?php if(isset($user)) echo $user['email']; ?>"/></td>                        
+                            <td style="width:125px;"><input type="text" name="email" required="required" value="<?php if(isset($user)) echo $user['email']; ?>"/></td>                        
                             <td style="width:125px;border-left:40px solid transparent;">Téléphone</td>
-                            <td style="width:125px;"><input type="text-area" name="telephone" required="required" value="0<?php if(isset($user)) echo $user['telephone']; ?>"/></td>
+                            <td style="width:125px;"><input type="text" name="telephone" required="required" value="0<?php if(isset($user)) echo $user['telephone']; ?>"/></td>
                         </tr>
                 </table>
                 <input type="submit" name="modifier" value="Modifier"/>
                 <?php echo "<a href='php/delete.php?id=".$user['id']."'>" ?><input type="button" name="delete" value="Supprimer le Compte"/></a>
             </form>
+        </section>
     </body>
 </html>
