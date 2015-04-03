@@ -1,28 +1,12 @@
 <?php
-session_start();
-include("php/connexion.php");
-if(isset($_POST["email"])){
-	$email =$_POST["email"];
-	$pwd = $_POST["pwd"];
-	$query = "SELECT *, u.id as id_u FROM user u JOIN type t ON t.id = u.id_type WHERE email = '".$email."' AND pwd = '".$pwd."' ; ";
-	$result = mysqli_query($connexion, $query);
 
-	if(mysqli_num_rows($result) != 0){
-		$user = mysqli_fetch_array($result);
-		$_SESSION["userId"] = $user['id_u'];
-		$_SESSION["typeId"] = $user["id_type"];
-	}else{
-		function myFunction()
-		{
-			alert("Mauvais mot de passe et/ou login.");
-		}
-	}
-}
+// Header 
+require("header.php");
 
+//Affichage des biens
 $query = "SELECT * FROM bien WHERE id_user=".$_SESSION["userId"]." ORDER BY datedajout DESC";
 $result = mysqli_query($connexion, $query);
 $bien = NULL;
-
 while($row = mysqli_fetch_array($result)) { 
 	$bien  .= 
 	'<table style="width:800px;height: 40px;" class="titletable">
@@ -42,17 +26,20 @@ while($row = mysqli_fetch_array($result)) {
 	</table>';
 }
 
+//Page
 if(isset($_SESSION["userId"])){
-	$query = "SELECT * FROM user WHERE id=".$_SESSION["userId"]."";
-	$result = mysqli_query($connexion, $query);
-	$user = mysqli_fetch_array($result);
-}
+    echo'<section class="main" style="margin-left:10%; margin-right:10%;">
+            <form class="fenetresearch" action="proposer.php" method="post">
+                <h1><span class="titlerecherche">Mes Biens</span></h1>
+                    ';echo ' '. $bien . ' ';echo'        
+            </form>​​
+        </section>
+    </body>
+</html>';
 
-if(isset($_SESSION["userId"])){
-	include('mesbien.html');
 }
 else {
-	header("location: nonco.php");
+	echo "<script type='text/javascript'>document.location.replace('nonco.php');</script>";
 }
 
 ?>
