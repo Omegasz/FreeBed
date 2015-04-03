@@ -1,16 +1,16 @@
 body {
-	width:1200px;
+	width:100%;
+	height:100%;
 	margin: 0 auto;
-	background: url(http://subtlepatterns.com/patterns/mochaGrunge.png);
+	background: url(http://subtlepatterns.com/patterns/dark_fish_skin.png);
 }
 
 #logo {
 	float: left;
-	width: 700px;
-	height: 150px;
-	margin-top: 70px;
-	margin-left: 2%;
-	margin-bottom: 60px;
+	text-align: center;
+	width: 17%;
+	margin: 0.3% 0 0 0.3%;
+	padding: 0;
 }
 
 #logo img {
@@ -21,3 +21,12 @@ textarea {
 	resize: none;
 }
 
+.mainnav {
+	width: 65%;
+	margin: 0 auto;
+}
+
+.mainwindow {
+	width: 298px;
+	float: right;
+}

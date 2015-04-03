@@ -1,30 +1,24 @@
+<!-- Header -->
 <?php
-session_start();
-include("php/connexion.php");
-if(isset($_POST["email"])){
-	$email =$_POST["email"];
-	$pwd = $_POST["pwd"];
-	$query = "SELECT *, u.id as id_u FROM user u JOIN type t ON t.id = u.id_type WHERE email = '".$email."' AND pwd = '".$pwd."' ; ";
-	$result = mysqli_query($connexion, $query);
-
-	if(mysqli_num_rows($result) != 0){
-		$user = mysqli_fetch_array($result);
-		$_SESSION["userId"] = $user['id_u'];
-		$_SESSION["typeId"] = $user["id_type"];
-	}else{
-		function myFunction()
-		{
-			alert("Mauvais mot de passe et/ou login.");
-		}
-	}
-}
-
-
-if(isset($_SESSION["userId"])){
-	$query = "SELECT * FROM user WHERE id=".$_SESSION["userId"]."";
-	$result = mysqli_query($connexion, $query);
-	$user = mysqli_fetch_array($result);
-}
-
-include('index.html');
+require("header.php")
 ?>
+
+<!-- Html de la page -->
+
+        <div id="header"><div class="wrap">
+            <div id="slide-holder">
+                <div id="slide-runner">
+                    <a href=""><img id="slide-img-1" src="pictures/slider1.png" class="slide" alt="" /></a>
+                    <a href=""><img id="slide-img-2" src="pictures/slider2.png" class="slide" alt="" /></a>
+                    <a href=""><img id="slide-img-3" src="pictures/slider3.png" class="slide" alt="" /></a>
+                    <a href=""><img id="slide-img-4" src="pictures/slider4.png" class="slide" alt="" /></a>
+                    <div id="slide-controls">
+                        <p id="slide-client" class="text"><strong>post: </strong><span></span></p>
+                        <p id="slide-desc" class="text"></p>
+                        <p id="slide-nav"></p>
+                    </div>
+                </div>
+            </div>
+        </div></div>
+    </body>
+</html>

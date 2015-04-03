@@ -1,28 +1,11 @@
 <?php
-session_start();
-include("php/connexion.php");
-if(isset($_POST["email"])){
-	$email =$_POST["email"];
-	$pwd = $_POST["pwd"];
-	$query = "SELECT *, u.id as id_u FROM user u JOIN type t ON t.id = u.id_type WHERE email = '".$email."' AND pwd = '".$pwd."' ; ";
-	$result = mysqli_query($connexion, $query);
+// Header 
+require("header.php");
 
-	if(mysqli_num_rows($result) != 0){
-		$user = mysqli_fetch_array($result);
-		$_SESSION["userId"] = $user['id_u'];
-		$_SESSION["typeId"] = $user["id_type"];
-	}else{
-		function myFunction()
-		{
-			alert("Mauvais mot de passe et/ou login.");
-		}
-	}
-}
-
+//Affichage des Nouveautés
 $query = "SELECT * FROM bien WHERE dispo = 1 ORDER BY datedajout DESC";
 $result = mysqli_query($connexion, $query);
 $bien = NULL;
-
 while($row = mysqli_fetch_array($result)) { 
 	$bien  .= 
 	'<table style="width:800px;height: 40px;" class="titletable">
@@ -38,15 +21,16 @@ while($row = mysqli_fetch_array($result)) {
 		</tr>
 	</table>';
 }
-
-
-
-if(isset($_SESSION["userId"])){
-	$query = "SELECT * FROM user WHERE id=".$_SESSION["userId"]."";
-	$result = mysqli_query($connexion, $query);
-	$user = mysqli_fetch_array($result);
-}
-
-include('news.html');
-
 ?>
+
+<!-- Html de la page -->
+        <section class="main" style="margin-left:10%; margin-right:10%;">
+            <form class="fenetresearch" action="recherche.php" method="post">
+                <h1><span class="titlerecherche">Nouveautés</span></h1>
+                    <?php
+                        echo ' '. $bien . ' ';
+                    ?>
+            </form>
+        </section>
+    </body>
+</html>

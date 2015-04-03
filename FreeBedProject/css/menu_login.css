@@ -63,13 +63,12 @@ a, li {
 /* Global CSS that are applied for all screen sizes */
 
 .nav {
-	margin: 0px auto 0 auto; 
-	clear: both;
+	margin: 0px auto 0 auto;
 	height: 77px;
 }
 
 .nav ul {
-	width: 1200px;
+	width: 100%;
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -121,7 +120,6 @@ a, button {
 /* Adding some background color to the different menu items */
 
 .nav li:nth-child(6n+1) {
-	border-radius: 5px 0px 0px 5px;
 	background: rgb(208, 101, 3);
 }
 
@@ -138,7 +136,6 @@ a, button {
 }
 
 .nav li:nth-child(6n+5) {
-	border-radius: 0px 5px 5px 0px;
 	background: rgb(21, 40, 54);
 }
 
@@ -500,7 +497,7 @@ a, button {
 	float:left;
 	margin-top: -5px;
 	margin-left: -10px;
-	width: 150px;
+	width: 131px;
 }
 
 .comptel a:visited, .comptel a:link {
@@ -515,17 +512,16 @@ a, button {
 
 .form-2 {
     /* Size and position */
-    width: 370px;
+    width: 285px;
     padding: 15px;
-    position: relative;
-    margin-top: 40px;
+    position: fixed;
+    margin-top: -70px;
+    margin-left: -35px;
     height: 150px;
-    float: left;
-    margin-left: 40px;
+    margin-left: -28px;
 
     /* Styles */
     background: url(http://subtlepatterns.com/patterns/squared_metal.png);
-    border-radius: 4px;
     color: #7e7975;
     box-shadow:
         0 2px 2px rgba(0,0,0,0.2),        
@@ -626,7 +622,6 @@ a, button {
     padding: 5px;
     margin-bottom: 5px;
     border: 3px solid #ebe6e2;
-    border-radius: 5px;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -ms-transition: all 0.3s ease-out;
@@ -660,7 +655,6 @@ a, button {
 
     /* Styles */
     box-shadow: inset 0 1px rgba(255,255,255,0.3);
-    border-radius: 3px;
     cursor: pointer;
 
     /* Font styles */
@@ -707,7 +701,7 @@ a, button {
 
 .form-2 .opt {
     text-align: right;
-    margin-right: 3px;
+    margin-right: -18px;
     height: 20px;
 }
 
@@ -733,15 +727,13 @@ a, button {
     width: auto;
     padding: 15px;
     position: relative;
-    margin-top: 40px;
     height: auto;
     float: left;
-    margin-left: 40px;
+    margin-left: 22.5%;
     margin-bottom: 40px;
 
     /* Styles */
     background: url(http://subtlepatterns.com/patterns/squared_metal.png);
-    border-radius: 4px;
     color: #7e7975;
     box-shadow:
         0 2px 2px rgba(0,0,0,0.2),        
@@ -1018,12 +1010,11 @@ a, button {
     margin-top: 40px;
     height: auto;
     float: left;
-    margin-left: 40px;
+    margin-left: 21.5%;
    	margin-bottom: 40px;
 
     /* Styles */
     background: url(http://subtlepatterns.com/patterns/squared_metal.png);
-    border-radius: 4px;
     color: #7e7975;
     box-shadow:
         0 2px 2px rgba(0,0,0,0.2),        
@@ -1277,12 +1268,10 @@ a, button {
     position: relative;
     margin-top: 40px;
     height: auto;
-    float: left;
-    margin-left: 160px;
+    margin-left: 30%;
 
     /* Styles */
     background: url(http://subtlepatterns.com/patterns/squared_metal.png);
-    border-radius: 4px;
     color: #7e7975;
     box-shadow:
         0 2px 2px rgba(0,0,0,0.2),        
